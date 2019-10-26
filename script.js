@@ -1,20 +1,113 @@
 var disBox = document.querySelector("#displayBox");
 var genBtn = document.querySelector("#genBtn");
 var copyToBtn = document.querySelector("#copyToBtn");
-var charLength = 0;
-var charUp = 0;
-var charLow = 0;
-var charSpec = 0;
+var lenghtEL = document.querySelector("#charLength");
+var charUp = document.querySelector("#charUp");
+var charLow = document.querySelector("#charLow");
+var charSpec = document.querySelector("#charSpec");
+
+lengthEL = prompt(
+  "How long do you want this password to be? (Must be between 8 and 128 characters)"
+);
+console.log(lengthEL);
+
+genBtn.addEventListener("click", function(){
+
+});
+
+copyToBtn.addEventListener("click", function(){
+
+});
+// produces the password from the collected user imputs//
+function generate(){
 
 
-.addEventListener("keydown", function(event) {
-      var key = event.key.toLowerCase();
-      var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split("");
-      if (alphabetNumericCharacters.includes(key)) {
-        elements.forEach(function(element) {
-          element.textContent += event.key;
-        });
-      }
-    });
-    
 
+//sets the length, up/lower/spceial variables based onuser input//
+let complexity = lengthEL.value
+
+
+};
+
+//tell the user to choose between 8 and 128//
+window.alert()
+
+
+// inserts the generated password into the html//
+document.querySelector("#displayBox")innerHTML
+
+
+// object of all the complexity types //
+var complexityEl = {
+    length: lengthEL,
+    special: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    low: "abcdefghijklmnopqrstuzwzyx";
+    up: "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+}
+//while loop to add the complexityEl values to = passEl when they are true//
+// create a string that includes the user selected values from the object ComplexityEL//
+while charSpec === true 
+if charLow === true
+if charUp === true 
+let passEl = 
+
+
+
+while 
+
+//a "wet" way of codding this would be to write if else statments that guide you to what user inputs have been selected and thus initiating the correct function. This would require coding and recoding all of the possible veriable.. no bueno...//
+
+
+// this would only be for generating 1 random number between 8 and 128. wrong idea.//
+// if
+// Math.floor(Math.random() * 128) + 8
+
+
+
+// while (lenghtEL > 128 || lenghtEL < 8 || lenghtEL === 0) {
+//   lenghtEL = prompt(
+//     "How long do you want this password to be? (Must be between 8 and 128 characters)"
+//   );
+//   lenghtEL = parseInt(lenghtEL, 10);
+//   if (lenghtEL <= 128 && lenghtEL >= 8 && lenghtEL !== NaN) {
+//     alert("Your password will be " + lenghtEL + " characters long.");
+//   } else {
+//     alert("Please enter a valid answer.");
+//     lenghtEL = 0;
+//   }
+// }
+// // console.log(lengthEL);
+
+// console.log(lengthEL.typeof);
+
+// newpassword.addEventListener("click", function(event) {
+//   event.preventDefault();
+//   console.log(size);
+// });
+// console.log(lengthEl);
+
+//   .addEventListener("keydown", function(event) {
+//     var key = event.key.toLowerCase();
+//     var alphabetNumericCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ".split(
+//       ""
+//     );
+//     if (alphabetNumericCharacters.includes(key)) {
+//       elements.forEach(function(element) {
+//         element.textContent += event.key;
+//       });
+//     }
+//   });
+
+// //this will allow me to check the returned inputs//
+// if (
+//   tagName !== "h1" &&
+//   tagName !== "h2" &&
+//   tagName !== "p" &&
+//   tagName !== "div"
+// ) {
+//   alert("please enter a valid tag");
+// } else {
+//   var tag = document.createElement(tagName);
+//   tag.textContent = "This was made via prompts. It's a " + tagName;
+//   document.body.appendChild(tag);
+// }
