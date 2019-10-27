@@ -13,29 +13,10 @@ function generatePass() {
   // var charSet = "";
   let complexity = sliderEl.value;
 
-  // produces the complexity string from the collected user imputs//
+  let values =
+    " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 
-  let values = function charBank() {
-    charBank = "";
-
-    if (charNum === "true") {
-      charBank = "123456789";
-    }
-    if (charLow === "true") {
-      charBank += "abcdefghijklmnopqrstuzwzyx";
-    }
-    if (charSpec === "true") {
-      charBank += " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-    }
-    if (charUp === true) {
-      charBank += "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-    }
-    console.log(charBank);
-  };
-
-  // let values =
-  //   " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-  // // function buildPassword(){
+  // function buildPassword(){
   let password = "";
 
   //  creates for loop to choose passoword char based on complexity
@@ -48,6 +29,7 @@ function generatePass() {
 }
 
 genBtn.addEventListener("click", generatePass);
+
 //display length
 lengthDisEl.textContent = sliderEl.value;
 
@@ -58,6 +40,34 @@ sliderEl.oninput = function() {
     lengthDisEl.textContent = "1";
   }
 };
+
+function copypass() {
+  var copyText = disBox;
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+copyToBtn.addEventListener("click", copypass);
+// produces the complexity string from the collected user imputs//
+
+// let values = function() {
+//   charBank = "";
+
+//   if (charNum === "true") {
+//     charBank = "123456789";
+//   }
+//   if (charLow === "true") {
+//     charBank += "abcdefghijklmnopqrstuzwzyx";
+//   }
+//   if (charSpec === "true") {
+//     charBank += " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+//   }
+//   if (charUp === true) {
+//     charBank += "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+//   }
+//   console.log(charBank);
+// };
 
 // var complexityEl =
 //     length: sliderEl,
