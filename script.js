@@ -3,18 +3,39 @@ var genBtn = document.querySelector("#genBtn");
 var copyToBtn = document.querySelector("#copyToBtn");
 var sliderEl = document.querySelector("#charLength");
 var lengthDisEl = document.querySelector("#lengthDis");
-// var charUp = document.querySelector("#charUp");
-// var charLow = document.querySelector("#charLow");
-// var charSpec = document.querySelector("#charSpec");
+var charUp = document.querySelector("#charUp");
+var charLow = document.querySelector("#charLow");
+var charSpec = document.querySelector("#charSpec");
+var charNum = document.querySelector("#charNum");
 
 function generatePass() {
+  event.preventDefault;
   // var charSet = "";
   let complexity = sliderEl.value;
 
   // produces the complexity string from the collected user imputs//
-  let values =
-    " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-  // function buildPassword(){
+
+  let values = function charBank() {
+    charBank = "";
+
+    if (charNum === "true") {
+      charBank = "123456789";
+    }
+    if (charLow === "true") {
+      charBank += "abcdefghijklmnopqrstuzwzyx";
+    }
+    if (charSpec === "true") {
+      charBank += " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+    }
+    if (charUp === true) {
+      charBank += "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+    }
+    console.log(charBank);
+  };
+
+  // let values =
+  //   " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+  // // function buildPassword(){
   let password = "";
 
   //  creates for loop to choose passoword char based on complexity
