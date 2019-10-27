@@ -10,20 +10,25 @@ var charNum = document.querySelector("#charNum");
 
 function generatePass() {
   event.preventDefault;
+
   // var charSet = "";
   let complexity = sliderEl.value;
 
-  let values =
-    " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+  // let values =
+  //   " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
 
+  console.log(charNum.checked);
   // function buildPassword(){
   let password = "";
 
   //  creates for loop to choose passoword char based on complexity
+  console.log(values());
   for (var i = 0; i <= complexity; i++) {
     password =
       password +
-      values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+      values().charAt(
+        Math.floor(Math.random() * Math.floor(values().length - 1))
+      );
   }
   disBox.value = password;
 }
@@ -49,25 +54,26 @@ function copypass() {
   alert("Copied the text: " + copyText.value);
 }
 copyToBtn.addEventListener("click", copypass);
+
 // produces the complexity string from the collected user imputs//
 
-// let values = function() {
-//   charBank = "";
+function values() {
+  charBank = "";
 
-//   if (charNum === "true") {
-//     charBank = "123456789";
-//   }
-//   if (charLow === "true") {
-//     charBank += "abcdefghijklmnopqrstuzwzyx";
-//   }
-//   if (charSpec === "true") {
-//     charBank += " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-//   }
-//   if (charUp === true) {
-//     charBank += "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
-//   }
-//   console.log(charBank);
-// };
+  if (charNum.checked === true) {
+    charBank += "123456789";
+  }
+  if (charLow.checked === true) {
+    charBank += "abcdefghijklmnopqrstuzwzyx";
+  }
+  if (charSpec.checked === true) {
+    charBank += " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+  }
+  if (charUp.checked === true) {
+    charBank += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  return charBank;
+}
 
 // var complexityEl =
 //     length: sliderEl,

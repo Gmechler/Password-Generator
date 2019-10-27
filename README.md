@@ -16,9 +16,9 @@ I will be submitting the working version that can complete these things.
 
 > > > > > > > What I struggled with<<<<<<<<
 
-I was not able to correctly complete the function that would generate a variable input string based on user input.
-I have commented this out starting on line 47.
+I struggled with debugging and returning correct console.log()
+I would have liked to utilized the user input in my orginal concept
 
-> > > > > > What I need to work on<<<<<<<
+> > > > > > What I need to work on<<<<<<<
 > > > > > > Functions and addeventlistner I am able to use but if they get too complex I get lost.
 > > > > > > If, else, If Else, While, and For loops. This was my biggest difficulty and I was not able to find the answers in the amount of time I had left once I realized that I was not grasping it.
