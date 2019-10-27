@@ -1,68 +1,85 @@
 var disBox = document.querySelector("#displayBox");
 var genBtn = document.querySelector("#genBtn");
 var copyToBtn = document.querySelector("#copyToBtn");
-var lenghtEL = document.querySelector("#charLength");
-var charUp = document.querySelector("#charUp");
-var charLow = document.querySelector("#charLow");
-var charSpec = document.querySelector("#charSpec");
+var sliderEl = document.querySelector("#charLength");
+var lengthDisEl = document.querySelector("#lengthDis");
+// var charUp = document.querySelector("#charUp");
+// var charLow = document.querySelector("#charLow");
+// var charSpec = document.querySelector("#charSpec");
 
-lengthEL = prompt(
-  "How long do you want this password to be? (Must be between 8 and 128 characters)"
-);
-console.log(lengthEL);
+function generatePass() {
+  // var charSet = "";
+  let complexity = sliderEl.value;
 
-genBtn.addEventListener("click", function(){
+  // produces the complexity string from the collected user imputs//
+  let values =
+    " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~abcdefghijklmnopqrstuzwzyxABCDEFGHIJKLMNOPQRSTUVWXYZ123456789";
+  // function buildPassword(){
+  let password = "";
 
-});
+  //  creates for loop to choose passoword char based on complexity
+  for (var i = 0; i <= complexity; i++) {
+    password =
+      password +
+      values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+  }
+  disBox.value = password;
+}
 
-copyToBtn.addEventListener("click", function(){
+genBtn.addEventListener("click", generatePass);
+//display length
+lengthDisEl.textContent = sliderEl.value;
 
-});
-// produces the password from the collected user imputs//
-function generate(){
-
-
-
-//sets the length, up/lower/spceial variables based onuser input//
-let complexity = lengthEL.value
-
-
+sliderEl.oninput = function() {
+  if (sliderEl.value > 0) {
+    lengthDisEl.textContent = sliderEl.value;
+  } else {
+    lengthDisEl.textContent = "1";
+  }
 };
 
-//tell the user to choose between 8 and 128//
-window.alert()
+// var complexityEl =
+//     length: sliderEl,
+//     special: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+//     low: "abcdefghijklmnopqrstuzwzyx";
+//     up: "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+// genBtn.addEventListener("click", function(){
 
-// inserts the generated password into the html//
-document.querySelector("#displayBox")innerHTML
+// });
 
+// copyToBtn.addEventListener("click", function copy(){
 
-// object of all the complexity types //
-var complexityEl = {
-    length: lengthEL,
-    special: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-    low: "abcdefghijklmnopqrstuzwzyx";
-    up: "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-}
-//while loop to add the complexityEl values to = passEl when they are true//
-// create a string that includes the user selected values from the object ComplexityEL//
-while charSpec === true 
-if charLow === true
-if charUp === true 
-let passEl = 
+// });
 
+// //sets the length, up/lower/spceial variables based onuser input//
+// let complexity = lengthEL.value
 
+// };
 
-while 
+// //tell the user to choose between 8 and 128//
+// window.alert()
+
+// // inserts the generated password into the html//
+// document.querySelector("#displayBox")innerHTML
+
+// // object of all the complexity types //
+
+// }
+// //while loop to add the complexityEl values to = passEl when they are true//
+// // create a string that includes the user selected values from the object ComplexityEL//
+// while charSpec === true
+// if charLow === true
+// if charUp === true
+// let passEl =
+
+// while
 
 //a "wet" way of codding this would be to write if else statments that guide you to what user inputs have been selected and thus initiating the correct function. This would require coding and recoding all of the possible veriable.. no bueno...//
-
 
 // this would only be for generating 1 random number between 8 and 128. wrong idea.//
 // if
 // Math.floor(Math.random() * 128) + 8
-
-
 
 // while (lenghtEL > 128 || lenghtEL < 8 || lenghtEL === 0) {
 //   lenghtEL = prompt(
